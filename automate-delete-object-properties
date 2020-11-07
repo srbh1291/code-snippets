@@ -1,0 +1,23 @@
+let object = { a: 1, b: 2, c: 3 };   
+
+const removePropery = (propKey, { [propKey]: propValue, ...rest }) => rest;
+
+object = removePropery('a', object);
+
+console.log(object)
+
+==========================================================================================================================================================================================
+
+var myCar = { make: 'Ford', model: 'Mustang', year: 1969 };
+var myHonda = {color: 'red', wheels: 4, engine: {cylinders: 4, size: 2.2}};
+
+
+deleteObjKeys(myCar,['model','year'])
+deleteObjKeys(myHonda,['wheels','color'])
+
+
+function deleteObjKeys(object={},keys=[]){ 
+  for (const key of keys){
+    delete object[key]
+  }
+}
