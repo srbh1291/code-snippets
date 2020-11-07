@@ -21,3 +21,12 @@ function deleteObjKeys(object={},keys=[]){
     delete object[key]
   }
 }
+
+==========================================================================================================================================================================================
+
+let object = { a: 1, b: 2, c: 3 };   
+
+const removeProperties = (object, ...keys) => Object.entries(object).reduce((prev, [key, value]) => ({...prev, ...(!keys.includes(key) && { [key]: value }) }), {})
+object = removeProperties(object, 'a', 'b') // result => { c: 3 }
+
+console.log(object)
